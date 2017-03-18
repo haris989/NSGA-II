@@ -141,6 +141,7 @@ while(gen_no<max_gen):
     solution = [solution2[i] for i in new_solution]
     gen_no = gen_no + 1
 
+#Lets plot the final front now
 function1 = [i * -1 for i in function1_values]
 function2 = [j * -1 for j in function2_values]
 plt.xlabel('Function 1', fontsize=15)
