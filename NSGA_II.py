@@ -171,14 +171,13 @@ def mutation(solution):
 if __name__ == '__main__':
     pop_size = 20  # 种群大小
     max_gen = 921  # 最大迭代次数
-    # max_gen = 1  # 最大迭代次数
 
     # Initialization
     min_x = -55  # x的取值范围（定义域）
     max_x = 55
     solution = [min_x + (max_x - min_x) * random.random() for _ in range(0, pop_size)]  # 在最大值和最小值之间生成随机的x取值列表
     gen_no = 0  # 当前迭代次数
-    while (gen_no < max_gen):
+    while gen_no < max_gen:
         # 计算两个函数在当前x取值下的y值（y1、y2）
         function1_values = [function1(solution[i]) for i in range(0, pop_size)]
         function2_values = [function2(solution[i]) for i in range(0, pop_size)]
@@ -229,10 +228,10 @@ if __name__ == '__main__':
         gen_no = gen_no + 1
 
     # 打印一下最终解的非支配排序结果看一下（结果发现所有的解都是非支配解。。。）
-    final_f1_values = [function1(solution[i]) for i in range(0, pop_size)]
-    final_f2_values = [function2(solution[i]) for i in range(0, pop_size)]
-    sort_result = fast_non_dominated_sort(final_f1_values,final_f2_values)
-    print(sort_result)
+    # final_f1_values = [function1(solution[i]) for i in range(0, pop_size)]
+    # final_f2_values = [function2(solution[i]) for i in range(0, pop_size)]
+    # sort_result = fast_non_dominated_sort(final_f1_values,final_f2_values)
+    # print(sort_result)
 
     # Lets plot the final front now
     function1 = [i * -1 for i in function1_values]
